@@ -1,0 +1,68 @@
+/********************************************************
+                        초기화
+********************************************************/
+body {
+    font-family: "proxima-nova", sans-serif;
+    padding: 0;
+    margin: 0;
+    cursor: none;
+}
+
+#container {
+    --target: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #000 var(--target), #5f0c0c var(--target));
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    text-align: center;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, #5f0c0c var(--target), #fff var(--target));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 100%;
+    display: block;
+    line-height: 0.95;
+}
+
+h1 span {
+    font-size: 0.4em;
+    display: block;
+}
+
+
+/********************************************************
+                        커서 커스텀
+********************************************************/
+
+*, *::after, *::before {
+    box-sizing: border-box;
+    cursor: none !important;
+}
+.cursor__inner {	
+	z-index: 9999;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	mix-blend-mode: difference;
+	border-radius: 50%;
+}
+
+.cursor__inner--dot {
+	width: 6px;
+	height: 6px;
+	background: #ffffff;
+}
+
+.cursor__inner--circle {
+	width: 20px;
+	height: 20px;
+	border: 1px solid #ffffff;
+}
